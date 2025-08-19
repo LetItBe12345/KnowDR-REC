@@ -1,7 +1,7 @@
 # KnowDR-REC Evaluation Framework
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-blue.svg)](#)
-[![Dataset](https://img.shields.io/badge/Dataset-Available-F9D371)](#https://drive.google.com/drive/folders/1QiRKtHgkZ8sBaeZF_g9Sq7cRdfUrRipM?usp=sharing)
+[![Dataset](https://img.shields.io/badge/Dataset-Available-F9D371)](https://drive.google.com/drive/folders/1QiRKtHgkZ8sBaeZF_g9Sq7cRdfUrRipM?usp=sharing)
 [![Code](https://img.shields.io/badge/Code-Open_Source-green.svg)](https://github.com/LetItBe12345/KnowDR-REC)
 
 This repository contains the evaluation framework for **KnowDR-REC**, a novel benchmark for knowledge-driven referring expression comprehension that challenges large multimodal models with real-world knowledge reasoning and fine-grained visual grounding.
