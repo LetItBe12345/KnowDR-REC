@@ -12,3 +12,4 @@ evaluation:
   batch_size: 32
   concurrent_requests: 5
   output_dir: "evaluation_results"
+  name_variants_dict_path: "config/name_variants.json"  # 姓名变体字典路径
