@@ -1,0 +1,82 @@
+# KVQA Evaluation Framework - Model Configuration
+# 支持的视觉语言模型配置文件
+
+# 预定义的示例模型（精选的4个代表性模型）
+default_models:
+  - name: "gemini-2.5-flash"
+    openrouter_id: "google/gemini-2.5-flash"
+    description: "Google Gemini 2.5 Flash - 快速响应版本，适合批量评估"
+    max_tokens: 2048
+    temperature: 0.1
+    cost_per_1k_tokens: 0.00075  # 示例价格
+    recommended_concurrent: 5
+    
+  - name: "gemini-2.5-pro"
+    openrouter_id: "google/gemini-2.5-pro" 
+    description: "Google Gemini 2.5 Pro - 专业高性能版本，最佳质量"
+    max_tokens: 2048
+    temperature: 0.1
+    cost_per_1k_tokens: 0.0075   # 示例价格
+    recommended_concurrent: 3
+    
+  - name: "grok-2-vision"
+    openrouter_id: "x-ai/grok-2-vision"
+    description: "X.AI Grok 2 Vision - 创新视觉语言模型"
+    max_tokens: 2048
+    temperature: 0.1
+    cost_per_1k_tokens: 0.002    # 示例价格
+    recommended_concurrent: 4
+    
+  - name: "qwen-2.5-vl-7b"
+    openrouter_id: "qwen/qwen-2.5-vl-7b-instruct"
+    description: "Qwen 2.5 VL 7B - 开源视觉语言模型，高性价比"
+    max_tokens: 2048
+    temperature: 0.1
+    cost_per_1k_tokens: 0.0005   # 示例价格
+    recommended_concurrent: 6
+
+# 用户可以在这里添加更多模型
+# 格式参考上面的示例，只需要知道OpenRouter的模型ID即可
+user_models:
+  # 示例：如何添加新模型
+  # - name: "claude-3.5-sonnet"
+  #   openrouter_id: "anthropic/claude-3.5-sonnet" 
+  #   description: "Anthropic Claude 3.5 Sonnet"
+  #   max_tokens: 2048
+  #   temperature: 0.1
+  #   cost_per_1k_tokens: 0.003
+  #   recommended_concurrent: 3
+  
+  # - name: "gpt-4o"
+  #   openrouter_id: "openai/gpt-4o"
+  #   description: "OpenAI GPT-4o with vision"
+  #   max_tokens: 2048
+  #   temperature: 0.1  
+  #   cost_per_1k_tokens: 0.005
+  #   recommended_concurrent: 4
+
+# OpenRouter配置
+openrouter:
+  base_url: "https://openrouter.ai/api/v1"
+  headers:
+    HTTP-Referer: "https://github.com/your-username/KnowDR-REC"  # 替换为您的GitHub地址
+    X-Title: "KVQA Evaluation Framework"
+  
+  # 速率限制设置
+  rate_limits:
+    requests_per_minute: 200  # OpenRouter的通用限制
+    concurrent_requests: 10   # 最大并发数
+    
+  # 重试配置
+  retry:
+    max_attempts: 3
+    backoff_factor: 1.5
+    timeout: 30
+
+# 评估设置
+evaluation:
+  default_batch_size: 32
+  max_samples: null  # null表示评估全部样本
+  validate_images: true
+  save_intermediate_results: true
+  output_format: "json"  # 支持: json, csv, both

@@ -1,0 +1,14 @@
+api:
+  openrouter_api_key: "${OPENROUTER_API_KEY}"
+
+models:
+  - "gemini-2.5-flash"
+  - "gemini-2.5-pro"
+  - "grok-2-vision"
+  - "qwen-2.5-vl-7b"
+
+evaluation:
+  max_samples: null
+  batch_size: 32
+  concurrent_requests: 5
+  output_dir: "evaluation_results"

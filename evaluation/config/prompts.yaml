@@ -1,0 +1,5 @@
+positive_prompt:
+  template: ""
+  
+negative_prompt:
+  template: ""
